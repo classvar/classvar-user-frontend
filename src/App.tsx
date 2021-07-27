@@ -1,4 +1,5 @@
 import React from 'react';
+import Textarea from '@components/atoms/Textarea';
 import Button from '@components/atoms/Button';
 import logo from './logo.svg';
 import './App.css';
@@ -14,6 +15,7 @@ const App: React.FC = () => {
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
         </p>
+        <Textarea disabled />
         <Button onClick={onClick}>Button</Button>
         <Button onClick={onClick} secondary>
           Secondary
