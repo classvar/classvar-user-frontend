@@ -1,4 +1,5 @@
 import React from 'react';
+import Textarea from '@components/atoms/Textarea';
 import Button from '@components/atoms/Button';
 import Input from '@components/atoms/Input';
 import logo from './logo.svg';
@@ -25,6 +26,7 @@ const App: React.FC = () => {
         <Input placeholder="input" />
         <Input password placeholder="password" onPressEnter={onClick} />
         <Input disabled />
+        <Textarea disabled />
       </header>
     </div>
   );
