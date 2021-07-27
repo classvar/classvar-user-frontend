@@ -1,6 +1,7 @@
 import React from 'react';
 import Textarea from '@components/atoms/Textarea';
 import Button from '@components/atoms/Button';
+import Input from '@components/atoms/Input';
 import logo from './logo.svg';
 import './App.css';
 
@@ -12,10 +13,6 @@ const App: React.FC = () => {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <Textarea disabled />
         <Button onClick={onClick}>Button</Button>
         <Button onClick={onClick} secondary>
           Secondary
@@ -26,14 +23,10 @@ const App: React.FC = () => {
         <Button onClick={onClick} disabled>
           Disabled
         </Button>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <Input placeholder="input" />
+        <Input password placeholder="password" onPressEnter={onClick} />
+        <Input disabled />
+        <Textarea disabled />
       </header>
     </div>
   );
