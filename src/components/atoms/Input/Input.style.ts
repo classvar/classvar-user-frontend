@@ -18,9 +18,9 @@ export const StyledInput = styled.input<StyledInputProps>`
   color: rgba(0, 0, 0, 0.85);
   font-size: 14px;
   line-height: 1.5715;
-  background-color: #fff;
+  background-color: ${({ theme }) => theme.colors.white};
   background-image: none;
-  border: 1px solid #d9d9d9;
+  border: 1px solid ${({ theme }) => theme.colors.disabledborder};
   border-radius: 2px;
   transition: all 0.3s;
   &:-moz-placeholder {
@@ -31,31 +31,31 @@ export const StyledInput = styled.input<StyledInputProps>`
     text-overflow: ellipsis;
   }
   &:-ms-input-placeholder {
-    color: #bfbfbf;
+    color: ${({ theme }) => theme.colors.placeholder};
     text-overflow: ellipsis;
   }
   &::placeholder {
-    color: #bfbfbf;
+    color: ${({ theme }) => theme.colors.placeholder};
   }
   &:hover {
-    border-color: #40a9ff;
+    border-color: ${({ theme }) => theme.colors.primary80};
     border-right-width: 1px !important;
   }
   &:focus {
-    border-color: #40a9ff;
+    border-color: ${({ theme }) => theme.colors.primary80};
     border-right-width: 1px !important;
     outline: 0;
-    box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
+    box-shadow: 0 0 0 2px rgba(0, 98, 65, 0.2);
   }
   ${(props) =>
     props.disabled &&
     css`
       color: rgba(0, 0, 0, 0.25);
-      background-color: #f5f5f5;
+      background-color: ${({ theme }) => theme.colors.disabledbg};
       cursor: not-allowed;
       opacity: 1;
       &:hover {
-        border-color: #d9d9d9;
+        border-color: ${({ theme }) => theme.colors.disabledborder};
         border-right-width: 1px !important;
       }
     `}
