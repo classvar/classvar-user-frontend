@@ -1,5 +1,7 @@
 export interface HeaderbarProps {
+  login?: boolean;
+  scrolled?: boolean;
   children: React.ReactNode;
-  Title: string;
+  title: string;
   subText?: string;
 }

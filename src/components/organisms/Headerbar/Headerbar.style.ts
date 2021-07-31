@@ -1,14 +1,29 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+import { HeaderbarProps } from './Headerbar.type';
 
-export const StyledHeaderbar = styled.div`
+type HeaderProps = Pick<HeaderbarProps, 'login' | 'scrolled'>;
+
+export const StyledHeaderbar = styled.div<HeaderProps>`
   position: fixed;
   height: 100px;
-  width: 100%;
+  width: calc(100% - 260px);
   background-color: ${({ theme }) => theme.colors.white};
   color: ${({ theme }) => theme.colors.main};
-  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.25);
+
   display: flex;
   padding: 15px;
+
+  ${(props) =>
+    props.scrolled &&
+    css`
+      box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.25);
+    `}
+
+  ${(props) =>
+    props.login &&
+    css`
+      width: 100%;
+    `}
 `;
 
 export const StyledTitle = styled.div`

@@ -34,7 +34,11 @@ const Login: React.FC = () => {
 
   return (
     <>
-      <Headerbar Title="ClassVAR" subText="ClassVAR에 오신것을 환영합니다">
+      <Headerbar
+        title="ClassVAR"
+        subText="ClassVAR에 오신것을 환영합니다"
+        login
+      >
         <Button onClick={openLoginModal}>로그인</Button>
       </Headerbar>
       <HeaderSpace />
