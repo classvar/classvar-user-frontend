@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { HeaderbarProps } from './Headerbar.type';
 import {
   StyledHeaderbar,
@@ -7,11 +7,32 @@ import {
   StyledButtonArea,
 } from './Headerbar.style';
 
-const Headerbar: React.FC<HeaderbarProps> = ({ children, subText, Title }) => {
+const Headerbar: React.FC<HeaderbarProps> = ({
+  children,
+  subText,
+  title,
+  login,
+}) => {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!scrolled && window.scrollY > 30) {
+        setScrolled(true);
+      } else if (scrolled && window.scrollY <= 30) {
+        setScrolled(false);
+      }
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [scrolled]);
+
   return (
-    <StyledHeaderbar>
+    <StyledHeaderbar scrolled={scrolled} login={login}>
       <StyledTitle>
-        {Title}
+        {title}
         <StyledSubText>{subText}</StyledSubText>
       </StyledTitle>
       <StyledButtonArea>{children}</StyledButtonArea>
