@@ -5,6 +5,7 @@ declare module 'styled-components' {
     fontSizes: {
       header1: string;
       header2: string;
+      header3: string;
       body: string;
     };
 
