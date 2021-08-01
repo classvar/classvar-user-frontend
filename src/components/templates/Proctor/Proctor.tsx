@@ -1,9 +1,17 @@
 import React from 'react';
 import { Route, RouteComponentProps } from 'react-router-dom';
+import { MatchParams } from '@common/router.type';
 import SidebarFrame from '@components/atoms/SidebarFrame';
 import ListMenu from '@components/molecules/ListMenu';
-import { Wrapper, Content, Header, Body, Title } from './Proctor.style';
-import { MatchParams } from '@common/router.type';
+import Exam from '@pages/Exam';
+import {
+  Wrapper,
+  SidebarSpace,
+  Content,
+  Header,
+  Body,
+  Title,
+} from './Proctor.style';
 
 const Proctor: React.FC<RouteComponentProps<MatchParams>> = ({ match }) => {
   const examMenus = [
@@ -28,9 +36,10 @@ const Proctor: React.FC<RouteComponentProps<MatchParams>> = ({ match }) => {
           </Body>
         }
       />
+      <SidebarSpace />
       <Content>
         <Route exact path={match.url} render={() => <h3>Home</h3>} />
-        <Route path={`${match.url}/exam/:id`} render={() => <h3>Exam</h3>} />
+        <Route path={`${match.url}/exam/:id`} component={Exam} />
         <Route
           path={`${match.url}/examinee`}
           render={() => <h3>Examinee</h3>}

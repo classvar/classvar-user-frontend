@@ -4,6 +4,7 @@ import { SidebarFrameProps } from './SidebarFrame.type';
 export type ExamineeProp = Pick<SidebarFrameProps, 'examinee'>;
 
 export const StyledSidebar = styled.div<ExamineeProp>`
+  position: fixed;
   background-color: ${({ theme }) => theme.colors.primary100};
   height: 100%;
   width: 260px;

@@ -6,6 +6,11 @@ export const Wrapper = styled.div`
   display: flex;
 `;
 
+export const SidebarSpace = styled.div`
+  height: 100%;
+  width: 260px;
+`;
+
 export const Content = styled.div`
   height: 100%;
   flex-direction: column;
