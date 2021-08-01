@@ -27,16 +27,17 @@ export const StyledHeaderbar = styled.div<HeaderProps>`
 `;
 
 export const StyledTitle = styled.div`
-  /* height: 80px; */
   width: 100%;
   font-size: ${({ theme }) => theme.fontSizes.header1};
+  font-weight: bold;
   color: ${({ theme }) => theme.colors.main};
   text-align: left;
-  /* padding: 20px; */
 `;
 
 export const StyledSubText = styled.div`
   font-size: ${({ theme }) => theme.fontSizes.body};
+  font-weight: lighter;
+  color: ${({ theme }) => theme.colors.sub};
 `;
 
 export const StyledButtonArea = styled.div`

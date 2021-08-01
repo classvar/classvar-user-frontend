@@ -17,9 +17,9 @@ const Headerbar: React.FC<HeaderbarProps> = ({
 
   useEffect(() => {
     const handleScroll = () => {
-      if (!scrolled && window.scrollY > 30) {
+      if (!scrolled && window.scrollY > 20) {
         setScrolled(true);
-      } else if (scrolled && window.scrollY <= 30) {
+      } else if (scrolled && window.scrollY <= 20) {
         setScrolled(false);
       }
     };
