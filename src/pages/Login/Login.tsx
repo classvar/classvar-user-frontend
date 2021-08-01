@@ -52,7 +52,7 @@ const Login: React.FC = () => {
         closeModal={closeLoginModal}
         title="로그인"
         headerComponent={
-          <StyledLink to={'/'}>
+          <StyledLink to={'/proctor'}>
             <Button onClick={() => console.log('s')}>로그인하기</Button>
           </StyledLink>
         }

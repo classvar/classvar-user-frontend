@@ -6,6 +6,7 @@ const theme: DefaultTheme = {
   fontSizes: {
     header1: calcRem(34),
     header2: calcRem(20),
+    header3: calcRem(18),
     body: calcRem(13),
   },
 
