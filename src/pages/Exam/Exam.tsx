@@ -1,7 +1,7 @@
 import React from 'react';
 import { RouteComponentProps } from 'react-router';
 import { MatchParams } from '@common/router.type';
-import Indicator from '@components/atoms/Indicator/Indicator';
+import Indicator from '@components/atoms/Indicator';
 import Table from '@components/atoms/Table';
 import Headerbar from '@components/organisms/Headerbar';
 import Button from '@components/atoms/Button';
