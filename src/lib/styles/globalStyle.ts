@@ -13,6 +13,7 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Noto Sans KR', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+		color: ${({ theme }) => theme.colors.main}
 	}
 	#root {
 		height: 100%;

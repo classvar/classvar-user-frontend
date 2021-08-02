@@ -53,7 +53,9 @@ const Login: React.FC = () => {
         title="로그인"
         headerComponent={
           <StyledLink to={'/proctor'}>
-            <Button onClick={() => console.log('s')}>로그인하기</Button>
+            <Button rect onClick={() => console.log('s')}>
+              로그인하기
+            </Button>
           </StyledLink>
         }
       >
@@ -74,7 +76,9 @@ const Login: React.FC = () => {
         title="회원가입"
         headerComponent={
           <StyledLink to={'/'}>
-            <Button onClick={() => console.log('s')}>회원가입하기</Button>
+            <Button rect onClick={() => console.log('s')}>
+              회원가입하기
+            </Button>
           </StyledLink>
         }
       >

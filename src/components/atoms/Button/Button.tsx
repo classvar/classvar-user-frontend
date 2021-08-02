@@ -6,18 +6,20 @@ const Button: React.FC<ButtonProps> = ({
   children,
   disabled,
   danger,
+  rect,
   secondary,
   onClick,
 }) => {
   return (
     <StyledButton
-      type="button"
-      value={children}
       disabled={disabled}
       danger={danger}
+      rect={rect}
       secondary={secondary}
       onClick={onClick}
-    />
+    >
+      {children}
+    </StyledButton>
   );
 };
 
