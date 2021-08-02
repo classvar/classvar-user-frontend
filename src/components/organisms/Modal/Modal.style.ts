@@ -44,18 +44,21 @@ export const StyledModal = styled.div<StyledModalProps>`
 
 export const StyledSection = styled.section`
   width: 90%;
-  max-width: 500px;
+  max-width: 400px;
   margin: 0 auto;
-  border-radius: 0.3rem;
-  background-color: ${({ theme }) => theme.colors.primary20};
+  border-radius: 10px;
+  background-color: ${({ theme }) => theme.colors.white};
   animation: ${modalShow} 0.3s;
   overflow: hidden;
 `;
 export const StyledHeader = styled.div`
   display: flex;
   position: relative;
-  padding: 25px;
-  font-size: ${({ theme }) => theme.fontSizes.header1};
+  padding: 19px;
+  font-size: ${({ theme }) => theme.fontSizes.header2};
+  line-height: 32px;
+  font-weight: bold;
+  height: 70px;
 `;
 
 export const StyledTitle = styled.div`
@@ -64,8 +67,6 @@ export const StyledTitle = styled.div`
 
 export const StyledComponents = styled.div`
   display: flex;
-  padding: 8px;
-  height: 48px;
   top: 0;
 `;
 
@@ -81,5 +82,5 @@ export const StyledClose = styled.div`
 `;
 
 export const StyledBody = styled.div`
-  padding: 25px;
+  padding: 19px;
 `;

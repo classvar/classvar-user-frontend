@@ -18,9 +18,7 @@ export const StyledLink = styled(Link)`
   text-decoration: none;
 `;
 
-export const ModalBody = styled.div`
-  margin: 0px 80px 30px 80px;
-`;
+export const ModalBody = styled.div``;
 
 export const Aligner = styled.div`
   margin-top: 1rem;

@@ -1,9 +1,10 @@
 import React from 'react';
 
 export interface ButtonProps extends React.HTMLProps<HTMLButtonElement> {
-  children: string;
+  children: React.ReactNode;
   disabled?: boolean;
   danger?: boolean;
+  rect?: boolean;
   secondary?: boolean;
   onClick: () => void;
 }

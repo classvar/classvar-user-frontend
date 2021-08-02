@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import { ModalProps } from './Modal.type';
 import {
   StyledModal,
@@ -6,11 +6,8 @@ import {
   StyledHeader,
   StyledTitle,
   StyledComponents,
-  StyledClose,
   StyledBody,
 } from './Modal.style';
-
-import { ReactComponent as Close } from '@assets/close.svg';
 
 const Modal: React.FC<ModalProps> = ({
   title,
@@ -19,19 +16,29 @@ const Modal: React.FC<ModalProps> = ({
   closeModal,
   children,
 }) => {
+  const modalEl = useRef<HTMLDivElement>(null);
+
+  const handleClickOutside = (e: MouseEvent) => {
+    if (open && !modalEl.current?.contains(e.target as Node)) {
+      closeModal();
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener('click', handleClickOutside);
+    return () => {
+      window.removeEventListener('click', handleClickOutside);
+    };
+  }, [open]);
+
   return (
     <>
       {open ? (
         <StyledModal open={open}>
-          <StyledSection>
+          <StyledSection ref={modalEl}>
             <StyledHeader>
               <StyledTitle>{title}</StyledTitle>
-              <StyledComponents>
-                {headerComponent}
-                <StyledClose>
-                  <Close width="14" height="14" onClick={closeModal} />
-                </StyledClose>
-              </StyledComponents>
+              <StyledComponents>{headerComponent}</StyledComponents>
             </StyledHeader>
             <StyledBody>{children}</StyledBody>
           </StyledSection>

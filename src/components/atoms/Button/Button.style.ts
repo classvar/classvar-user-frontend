@@ -1,13 +1,16 @@
 import styled, { css } from 'styled-components';
 import { ButtonProps } from './Button.type';
 
-type StyledButtonProps = Pick<ButtonProps, 'disabled' | 'danger' | 'secondary'>;
+type StyledButtonProps = Pick<
+  ButtonProps,
+  'disabled' | 'danger' | 'secondary' | 'rect'
+>;
 
-export const StyledButton = styled.input<StyledButtonProps>`
+export const StyledButton = styled.div<StyledButtonProps>`
   line-height: 1.5715;
   position: relative;
   display: inline-block;
-  font-weight: 400;
+  font-weight: 500;
   white-space: nowrap;
   text-align: center;
   background-image: none;
@@ -98,5 +101,10 @@ export const StyledButton = styled.input<StyledButtonProps>`
         background: ${({ theme }) => theme.colors.secondary80};
         border-color: ${({ theme }) => theme.colors.secondary80};
       }
+    `}
+      ${(props) =>
+    props.rect &&
+    css`
+      border-radius: 8px;
     `}
 `;
