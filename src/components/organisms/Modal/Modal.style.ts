@@ -1,7 +1,9 @@
 import styled, { css, keyframes } from 'styled-components';
 import { ModalProps } from './Modal.type';
 
-export type StyledModalProps = Pick<ModalProps, 'open'>;
+export type OpenModalProps = Pick<ModalProps, 'open'>;
+
+export type WidthModalProps = Pick<ModalProps, 'width'>;
 
 const modalShow = keyframes`
  from {
@@ -23,7 +25,7 @@ const modalBgShow = keyframes`
   }
 `;
 
-export const StyledModal = styled.div<StyledModalProps>`
+export const StyledModal = styled.div<OpenModalProps>`
   display: none;
   position: fixed;
   top: 0;
@@ -42,7 +44,7 @@ export const StyledModal = styled.div<StyledModalProps>`
     `}
 `;
 
-export const StyledSection = styled.section`
+export const StyledSection = styled.section<WidthModalProps>`
   width: 90%;
   max-width: 400px;
   margin: 0 auto;
@@ -50,6 +52,7 @@ export const StyledSection = styled.section`
   background-color: ${({ theme }) => theme.colors.white};
   animation: ${modalShow} 0.3s;
   overflow: hidden;
+  max-width: ${(props) => props.width};
 `;
 export const StyledHeader = styled.div`
   display: flex;

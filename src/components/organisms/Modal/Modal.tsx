@@ -11,6 +11,7 @@ import {
 
 const Modal: React.FC<ModalProps> = ({
   title,
+  width,
   open,
   headerComponent,
   closeModal,
@@ -35,7 +36,7 @@ const Modal: React.FC<ModalProps> = ({
     <>
       {open ? (
         <StyledModal open={open}>
-          <StyledSection ref={modalEl}>
+          <StyledSection ref={modalEl} width={width}>
             <StyledHeader>
               <StyledTitle>{title}</StyledTitle>
               <StyledComponents>{headerComponent}</StyledComponents>

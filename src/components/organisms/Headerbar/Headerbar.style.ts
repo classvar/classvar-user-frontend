@@ -46,7 +46,7 @@ export const StyledButtonArea = styled.div`
   padding: 19px;
   display: flex;
   flex: 1;
-  input:nth-child(even) {
+  div:nth-child(even) {
     margin: 0px 10px 0px 10px;
   }
 `;
