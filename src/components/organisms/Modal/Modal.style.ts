@@ -54,6 +54,7 @@ export const StyledSection = styled.section<WidthModalProps>`
   overflow: hidden;
   max-width: ${(props) => props.width};
 `;
+
 export const StyledHeader = styled.div`
   display: flex;
   position: relative;
