@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useCallback } from 'react';
 import { ModalProps } from './Modal.type';
 import {
   StyledModal,
@@ -17,26 +17,16 @@ const Modal: React.FC<ModalProps> = ({
   closeModal,
   children,
 }) => {
-  const modalEl = useRef<HTMLDivElement>(null);
-
-  const handleClickOutside = (e: MouseEvent) => {
-    if (open && !modalEl.current?.contains(e.target as Node)) {
-      closeModal();
-    }
-  };
-
-  useEffect(() => {
-    window.addEventListener('click', handleClickOutside);
-    return () => {
-      window.removeEventListener('click', handleClickOutside);
-    };
-  }, [open]);
+  const stopEventProp = useCallback(
+    (e: React.MouseEvent) => e.stopPropagation(),
+    [],
+  );
 
   return (
     <>
       {open ? (
-        <StyledModal open={open}>
-          <StyledSection ref={modalEl} width={width}>
+        <StyledModal open={open} onClick={closeModal}>
+          <StyledSection width={width} onClick={stopEventProp}>
             <StyledHeader>
               <StyledTitle>{title}</StyledTitle>
               <StyledComponents>{headerComponent}</StyledComponents>
