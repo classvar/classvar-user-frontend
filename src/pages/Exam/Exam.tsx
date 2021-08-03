@@ -1,15 +1,27 @@
-import React from 'react';
+import React, { useState, useMemo } from 'react';
 import { RouteComponentProps } from 'react-router';
 import { MatchParams } from '@common/router.type';
+import Button from '@components/atoms/Button';
 import Indicator from '@components/atoms/Indicator';
 import Table from '@components/atoms/Table';
 import Headerbar from '@components/organisms/Headerbar';
-import Button from '@components/atoms/Button';
-import { HeaderSpace, IndicatorWrapper, TableWrapper } from './Exam.style';
+import Modal from '@components/organisms/Modal';
+import {
+  HeaderSpace,
+  IndicatorWrapper,
+  TableWrapper,
+  StyledLink,
+  ModalBody,
+} from './Exam.style';
 import { data } from './dummydata';
 
 const Exam: React.FC<RouteComponentProps<MatchParams>> = ({ match }) => {
-  const columns = React.useMemo(
+  const [modalOpen, setModalOpen] = useState(false);
+
+  const closeModal = () => {
+    setModalOpen(false);
+  };
+  const columns = useMemo(
     () => [
       {
         Header: '이름',
@@ -41,7 +53,7 @@ const Exam: React.FC<RouteComponentProps<MatchParams>> = ({ match }) => {
         title={match.params.id === '1' ? '중간고사' : '기말고사'}
         subText="2021년 7월 20일 18:00 ~ 20:00 (120분)"
       >
-        <Button danger onClick={() => console.log('a')}>
+        <Button danger onClick={() => setModalOpen(true)}>
           시험 삭제
         </Button>
         <Button onClick={() => console.log('a')}>문제집 편짐</Button>
@@ -59,6 +71,21 @@ const Exam: React.FC<RouteComponentProps<MatchParams>> = ({ match }) => {
       <TableWrapper>
         <Table columns={columns} data={data} />
       </TableWrapper>
+      <Modal
+        width="300px"
+        open={modalOpen}
+        closeModal={closeModal}
+        title="시험 삭제"
+        headerComponent={
+          <StyledLink to={'/proctor'}>
+            <Button rect danger onClick={() => console.log('s')}>
+              삭제하기
+            </Button>
+          </StyledLink>
+        }
+      >
+        <ModalBody>정말로 삭제하시겠습니까?</ModalBody>
+      </Modal>
     </>
   );
 };

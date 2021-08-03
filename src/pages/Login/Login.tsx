@@ -48,6 +48,7 @@ const Login: React.FC = () => {
         추후에 디자인 추가
       </LoginPage>
       <Modal
+        width="400px"
         open={LoginModalOpen}
         closeModal={closeLoginModal}
         title="로그인"
@@ -71,6 +72,7 @@ const Login: React.FC = () => {
         </ModalBody>
       </Modal>
       <Modal
+        width="400px"
         open={RegisterModalOpen}
         closeModal={closeRegisterModal}
         title="회원가입"
