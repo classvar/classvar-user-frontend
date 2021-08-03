@@ -1,4 +1,4 @@
-import React, { MouseEvent } from 'react';
+import React, { useCallback } from 'react';
 import { ModalProps } from './Modal.type';
 import {
   StyledModal,
@@ -8,7 +8,6 @@ import {
   StyledComponents,
   StyledBody,
 } from './Modal.style';
-import { useCallback } from 'react';
 
 const Modal: React.FC<ModalProps> = ({
   title,
@@ -18,7 +17,10 @@ const Modal: React.FC<ModalProps> = ({
   closeModal,
   children,
 }) => {
-  const stopEventProp = useCallback((e: MouseEvent) => e.stopPropagation(), []);
+  const stopEventProp = useCallback(
+    (e: React.MouseEvent) => e.stopPropagation(),
+    [],
+  );
 
   return (
     <>
