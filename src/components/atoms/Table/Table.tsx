@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable react/jsx-key */
 /* eslint-disable react/display-name */
 import React from 'react';
@@ -8,6 +9,7 @@ import {
   useGlobalFilter,
 } from 'react-table';
 import Checkbox from '@components/atoms/Checkbox';
+import GlobalFilter from '@components/molecules/GlobalFilter';
 import { TableProps } from './Table.type';
 import { StyledTable, Tr, Th, Td } from './Table.style';
 
@@ -18,8 +20,10 @@ const Table: React.FC<TableProps> = ({ columns, data, rowSelection }) => {
     headerGroups,
     rows,
     prepareRow,
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    setGlobalFilter, // TODO: 검색기능추가
+    state,
+    visibleColumns,
+    setGlobalFilter,
+
     state: { selectedRowIds },
   } = useTable(
     {
@@ -54,6 +58,10 @@ const Table: React.FC<TableProps> = ({ columns, data, rowSelection }) => {
 
   return (
     <>
+      <GlobalFilter
+        globalFilter={state.globalFilter}
+        setGlobalFilter={setGlobalFilter}
+      />
       <StyledTable {...getTableProps()}>
         <thead>
           {headerGroups.map((headerGroup) => (
