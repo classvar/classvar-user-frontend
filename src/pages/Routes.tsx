@@ -7,7 +7,7 @@ import Proctor from '@components/templates/Proctor';
 const Routes: React.FC = () => {
   return (
     <BrowserRouter>
-      <Route path="/login" component={Login} />
+      <Route path={['/', '/login']} exact component={Login} />
       <Route path="/proctor" component={Proctor} />
     </BrowserRouter>
   );
