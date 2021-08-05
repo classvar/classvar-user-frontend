@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 export const HeaderSpace = styled.div`
   width: 100%;
@@ -11,4 +12,9 @@ export const TableWrapper = styled.div`
 
 export const InputWrapper = styled.div`
   width: 200px;
+`;
+
+export const StyledLink = styled(Link)`
+  display: flex;
+  text-decoration: none;
 `;
