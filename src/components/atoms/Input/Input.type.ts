@@ -5,4 +5,5 @@ export interface InputProps extends React.HTMLProps<HTMLInputElement> {
   disabled?: boolean;
   password?: boolean;
   onPressEnter?: () => void;
+  onChange?: React.ChangeEventHandler<HTMLInputElement>;
 }
