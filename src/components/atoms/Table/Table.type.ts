@@ -4,4 +4,5 @@ export interface TableProps {
   columns: Array<Column>;
   data: Array<any>;
   rowSelection?: boolean;
+  ref?: any;
 }

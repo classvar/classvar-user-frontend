@@ -1,15 +1,9 @@
 import React, { useState } from 'react';
-import Table from '@components/atoms/Table';
-import Headerbar from '@components/organisms/Headerbar';
 import Button from '@components/atoms/Button';
 import Textarea from '@components/atoms/Textarea';
 import Modal from '@components/organisms/Modal';
-import {
-  HeaderSpace,
-  TableWrapper,
-  InputWrapper,
-  StyledLink,
-} from './ManageProctor.style';
+import FilterTable from '@components/templates/FilterTable';
+import { StyledLink } from './ManageProctor.style';
 import { data } from '../dummydata';
 
 const ManageProctor: React.FC = () => {
@@ -40,17 +34,18 @@ const ManageProctor: React.FC = () => {
 
   return (
     <>
-      <Headerbar title="감독관 관리" subText="총 40명">
-        <InputWrapper></InputWrapper>
+      <FilterTable
+        title="감독관 관리"
+        subText="총 40명"
+        columns={columns}
+        data={data}
+        placeholder="감독관 검색"
+      >
         <Button danger onClick={() => setDeleteModalOpen(true)}>
           감독관 삭제
         </Button>
         <Button onClick={() => setApplyModalOpen(true)}>감독관 등록</Button>
-      </Headerbar>
-      <HeaderSpace />
-      <TableWrapper>
-        <Table rowSelection columns={columns} data={data} />
-      </TableWrapper>
+      </FilterTable>
       <Modal
         width="300px"
         open={deleteModalOpen}
