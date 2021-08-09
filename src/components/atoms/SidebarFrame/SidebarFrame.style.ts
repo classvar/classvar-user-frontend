@@ -22,4 +22,16 @@ export const Header = styled.div`
   display: flex;
 `;
 
-export const Body = styled.div``;
+export const Body = styled.div`
+  width: 100%;
+  height: calc(100% - 120px);
+  overflow-y: auto;
+  &::-webkit-scrollbar {
+    background-color: ${({ theme }) => theme.colors.primary100};
+    width: 10px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: ${({ theme }) => theme.colors.scrollBar};
+    border-radius: 10px;
+  }
+`;

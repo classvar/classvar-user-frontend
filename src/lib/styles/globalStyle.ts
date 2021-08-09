@@ -10,7 +10,7 @@ const GlobalStyle = createGlobalStyle`
     padding : 0;
     margin : 0 auto;
     box-sizing: border-box;
-    font-family: 'Noto Sans KR', sans-serif;
+    font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 		color: ${({ theme }) => theme.colors.main}

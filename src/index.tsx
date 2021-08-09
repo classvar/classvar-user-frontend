@@ -4,10 +4,12 @@ import { ThemeProvider } from 'styled-components';
 import Routes from '@pages/Routes';
 import theme from '@styles/theme';
 import GlobalStyle from '@styles/globalStyle';
+import FontStyles from '@styles/fonts/fonts';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <ThemeProvider theme={theme}>
+    <FontStyles />
     <GlobalStyle />
     <Routes />
   </ThemeProvider>,

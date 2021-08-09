@@ -19,6 +19,7 @@ declare module 'styled-components' {
       bgDivider: string;
       disabledbg: string;
       disabledborder: string;
+      scrollBar: string;
       primary100: string;
       primary80: string;
       primary60: string;
