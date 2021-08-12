@@ -20,6 +20,7 @@ const theme: DefaultTheme = {
     bgDivider: '#f0f0f0',
     disabledbg: '#f5f5f5',
     disabledborder: '#d9d9d9',
+    scrollBar: '#c4c4c4',
     primary100: '#064420',
     primary80: '#006241',
     primary60: '#006644',

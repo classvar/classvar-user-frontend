@@ -7,10 +7,10 @@ export const data = [
     status: '응시',
   },
   {
-    name: '홍길동',
-    email: 'hong@gmail.com',
+    name: '홍길순',
+    email: 'sun@gmail.com',
     department: '기계공학과',
-    id: '2014965038',
+    id: '2015965038',
     status: '응시',
   },
   {
