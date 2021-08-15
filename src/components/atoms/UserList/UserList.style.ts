@@ -20,13 +20,6 @@ export const Tr = styled.div<RowProps>`
   :hover {
     background-color: ${({ theme }) => theme.colors.primary80};
   }
-  &:active {
-    background-color: ${({ theme }) => theme.colors.primary20};
-    color: ${({ theme }) => theme.colors.primary100};
-    svg {
-      fill: ${({ theme }) => theme.colors.primary100};
-    }
-  }
   ${(props) =>
     props.isSelected &&
     css`
