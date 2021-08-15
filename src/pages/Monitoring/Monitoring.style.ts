@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+import { Link } from 'react-router-dom';
 
 export const Wrapper = styled.div`
   height: 100%;
@@ -128,4 +129,9 @@ export const Video = styled.video`
   height: 135px;
 
   background-color: ${({ theme }) => theme.colors.primary20};
+`;
+
+export const StyledLink = styled(Link)`
+  display: flex;
+  text-decoration: none;
 `;

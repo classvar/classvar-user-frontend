@@ -56,11 +56,11 @@ const Exam: React.FC<RouteComponentProps<MatchParams>> = ({ match }) => {
         <Button danger onClick={() => setModalOpen(true)}>
           시험 삭제
         </Button>
-        <Button onClick={() => console.log('a')}>문제집 편짐</Button>
+        <Button onClick={() => console.log('a')}>문제집 편집</Button>
         <Button onClick={() => console.log('a')}>미리보기</Button>
-        <Button secondary onClick={() => console.log('a')}>
-          시험 모니터링
-        </Button>
+        <StyledLink to={`/proctor/exam/${match.params.id}/monitoring`}>
+          <Button secondary>시험 모니터링</Button>
+        </StyledLink>
       </Headerbar>
       <HeaderSpace />
       <IndicatorWrapper>
@@ -78,7 +78,7 @@ const Exam: React.FC<RouteComponentProps<MatchParams>> = ({ match }) => {
         title="시험 삭제"
         headerComponent={
           <StyledLink to={'/proctor'}>
-            <Button rect danger onClick={() => console.log('s')}>
+            <Button rect danger>
               삭제하기
             </Button>
           </StyledLink>
