@@ -21,6 +21,8 @@ import {
   Content,
   VideoArea,
   Video,
+  LargeVideoArea,
+  LargeVideo,
 } from './Monitoring.style';
 import { data } from '@pages/Exam/dummydata';
 import Headerbar from '@components/organisms/Headerbar';

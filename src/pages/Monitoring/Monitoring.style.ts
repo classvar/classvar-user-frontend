@@ -129,3 +129,7 @@ export const Video = styled.video`
 
   background-color: ${({ theme }) => theme.colors.primary20};
 `;
+
+export const LargeVideoArea = styled.div``;
+
+export const LargeVideo = styled.video``;
