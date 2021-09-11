@@ -49,4 +49,7 @@ export const StyledButtonArea = styled.div`
   div:nth-child(even) {
     margin: 0px 10px 0px 10px;
   }
+  a:nth-child(even) {
+    margin: 0px 10px 0px 10px;
+  }
 `;

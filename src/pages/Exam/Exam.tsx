@@ -58,7 +58,7 @@ const Exam: React.FC<RouteComponentProps<MatchParams>> = ({ match }) => {
         </Button>
         <Button onClick={() => console.log('a')}>문제집 편집</Button>
         <Button onClick={() => console.log('a')}>미리보기</Button>
-        <StyledLink to={`/proctor/exam/${match.params.id}/monitoring`}>
+        <StyledLink to={`/monitoring/exam/${match.params.id}`}>
           <Button secondary>시험 모니터링</Button>
         </StyledLink>
       </Headerbar>
