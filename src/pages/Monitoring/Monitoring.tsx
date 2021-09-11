@@ -2,9 +2,11 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable react/display-name */
 import React, { useState, useRef } from 'react';
+import { RouteComponentProps } from 'react-router-dom';
 import { TableInstance, CellProps } from 'react-table';
 import { ReactComponent as Note } from '@assets/note.svg';
 import { ReactComponent as Message } from '@assets/message.svg';
+import { MatchParams } from '@common/router.type';
 import Button from '@components/atoms/Button';
 import Input from '@components/atoms/Input';
 import SidebarFrame from '@components/atoms/SidebarFrame';
@@ -25,10 +27,11 @@ import {
   Content,
   VideoArea,
   Video,
-  StyledLink,
 } from './Monitoring.style';
 
-const Monitoring: React.FC = () => {
+const Monitoring: React.FC<RouteComponentProps<MatchParams>> = ({
+  history,
+}) => {
   const [selected, setSelected] = useState(0);
   const [modalOpen, setModalOpen] = useState(false);
 
@@ -188,11 +191,9 @@ const Monitoring: React.FC = () => {
         closeModal={closeModal}
         title="테스트 종료"
         headerComponent={
-          <StyledLink to={'/proctor'}>
-            <Button rect danger>
-              삭제하기
-            </Button>
-          </StyledLink>
+          <Button rect danger onClick={() => history.goBack()}>
+            테스트 종료하기
+          </Button>
         }
       >
         정말로 종료하시겠습니까?
