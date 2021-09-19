@@ -1972,10 +1972,10 @@
     "@types/history" "*"
     "@types/react" "*"
 
-"@types/react-table@^7.7.3":
-  version "7.7.3"
-  resolved "https://registry.yarnpkg.com/@types/react-table/-/react-table-7.7.3.tgz#0e5f952ec8562db1f6c950c766b53f27294a7e89"
-  integrity sha512-IL9DsA+V9AXUSPT6L+fFjo6YfEV40Fb+WmbrVxn+TjsPYUjkMZ0EZP1q0lTiosdrbrq3TeQI35Naxqc0ZTWEQg==
+"@types/react-table@^7.7.4":
+  version "7.7.4"
+  resolved "https://registry.yarnpkg.com/@types/react-table/-/react-table-7.7.4.tgz#7d01b3a9516e8dcb7152858271210ef08c6cc32a"
+  integrity sha512-CIBJJx9iid8k+kN1/WD8vSXnM1Qc6zX3ihrMnt3ilZxLSrFJSw4wc1u9WeT4dWjbECEO1wJBGVHfSknR4nzFiQ==
   dependencies:
     "@types/react" "*"
 
