@@ -4,7 +4,7 @@ import { InputProps } from './Input.type';
 
 const Input: React.FC<InputProps> = ({
   disabled,
-  password,
+  type,
   placeholder,
   value,
   onChange,
@@ -20,7 +20,7 @@ const Input: React.FC<InputProps> = ({
       <StyledInput
         disabled={disabled}
         placeholder={placeholder}
-        type={password ? 'password' : ''}
+        type={type}
         value={value}
         onChange={onChange}
         onKeyDown={onPress}

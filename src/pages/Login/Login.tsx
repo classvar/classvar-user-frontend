@@ -61,10 +61,15 @@ const Login: React.FC = () => {
         }
       >
         <ModalBody>
-          <InputWithLabel label="이메일" placeholder="이메일을 입력하세요." />
+          <InputWithLabel
+            label="이메일"
+            placeholder="이메일을 입력하세요."
+            type="email"
+          />
           <InputWithLabel
             label="비밀번호"
             placeholder="비밀번호를 입력하세요."
+            type="password"
           />
           <Aligner onClick={openRegisterModal}>
             <RightAlignedButton>회원가입</RightAlignedButton>
@@ -89,10 +94,12 @@ const Login: React.FC = () => {
           <InputWithLabel
             label="비밀번호"
             placeholder="비밀번호를 입력하세요."
+            type="password"
           />
           <InputWithLabel
             label="비밀번호 재확인"
             placeholder="비밀번호를 다시 한번 입력하세요."
+            type="password"
           />
         </ModalBody>
       </Modal>
