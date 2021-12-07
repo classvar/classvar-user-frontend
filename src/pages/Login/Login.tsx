@@ -102,6 +102,7 @@ const Login: React.FC = () => {
             value={loginEmail}
             onChange={onChangeLoginInputs}
             name="loginEmail"
+            type="email"
           />
           <InputWithLabel
             label="비밀번호"
