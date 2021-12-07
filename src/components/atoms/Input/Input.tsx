@@ -4,11 +4,12 @@ import { InputProps } from './Input.type';
 
 const Input: React.FC<InputProps> = ({
   disabled,
-  password,
+  type,
   placeholder,
   value,
   onChange,
   onPressEnter,
+  name,
 }) => {
   const onPress = (e: React.KeyboardEvent<HTMLDivElement>) => {
     if (e.key === 'Enter' && onPressEnter) {
@@ -20,10 +21,11 @@ const Input: React.FC<InputProps> = ({
       <StyledInput
         disabled={disabled}
         placeholder={placeholder}
-        type={password ? 'password' : ''}
+        type={type}
         value={value}
         onChange={onChange}
         onKeyDown={onPress}
+        name={name}
       />
     </>
   );
