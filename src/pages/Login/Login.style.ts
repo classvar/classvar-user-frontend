@@ -8,11 +8,6 @@ export const LoginPage = styled.div`
   background-color: ${({ theme }) => theme.colors.background};
 `;
 
-export const HeaderSpace = styled.div`
-  height: 100px;
-  width: 100%;
-`;
-
 export const StyledLink = styled(Link)`
   display: flex;
   text-decoration: none;

@@ -6,7 +6,6 @@ import Modal from '@components/organisms/Modal';
 import {
   Aligner,
   LoginPage,
-  HeaderSpace,
   StyledLink,
   ModalBody,
   RightAlignedButton,
@@ -41,7 +40,6 @@ const Login: React.FC = () => {
       >
         <Button onClick={openLoginModal}>로그인</Button>
       </Headerbar>
-      <HeaderSpace />
       <LoginPage>
         ClassVAR에 오신것을 환영합니다
         <br />
