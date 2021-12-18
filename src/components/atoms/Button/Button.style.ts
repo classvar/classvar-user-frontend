@@ -3,7 +3,7 @@ import { ButtonProps } from './Button.type';
 
 type StyledButtonProps = Pick<
   ButtonProps,
-  'disabled' | 'danger' | 'secondary' | 'rect'
+  'disabled' | 'danger' | 'secondary' | 'rect' | 'gray'
 >;
 
 export const StyledButton = styled.div<StyledButtonProps>`
@@ -102,6 +102,25 @@ export const StyledButton = styled.div<StyledButtonProps>`
         border-color: ${({ theme }) => theme.colors.secondary80};
       }
     `}
+    
+    ${(props) =>
+    props.gray &&
+    css`
+      color: ${({ theme }) => theme.colors.main};
+      background: ${({ theme }) => theme.colors.scrollBar};
+      border-color: ${({ theme }) => theme.colors.scrollBar};
+      text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.12);
+      box-shadow: 0 2px 0 rgba(0, 0, 0, 0.045);
+
+      :hover,
+      :focus,
+      :active {
+        color: ${({ theme }) => theme.colors.sub};
+        background: ${({ theme }) => theme.colors.disabledbg};
+        border-color: ${({ theme }) => theme.colors.disabledbg};
+      }
+    `}
+    
       ${(props) =>
     props.rect &&
     css`

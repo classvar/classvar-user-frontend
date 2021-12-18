@@ -9,6 +9,7 @@ const Button: React.FC<ButtonProps> = ({
   rect,
   secondary,
   onClick,
+  gray,
 }) => {
   return (
     <StyledButton
@@ -16,6 +17,7 @@ const Button: React.FC<ButtonProps> = ({
       danger={danger}
       rect={rect}
       secondary={secondary}
+      gray={gray}
       onClick={onClick}
     >
       {children}
