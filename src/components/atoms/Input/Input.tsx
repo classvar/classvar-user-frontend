@@ -9,6 +9,8 @@ const Input: React.FC<InputProps> = ({
   value,
   onChange,
   onPressEnter,
+  name,
+  error,
 }) => {
   const onPress = (e: React.KeyboardEvent<HTMLDivElement>) => {
     if (e.key === 'Enter' && onPressEnter) {
@@ -24,6 +26,8 @@ const Input: React.FC<InputProps> = ({
         value={value}
         onChange={onChange}
         onKeyDown={onPress}
+        name={name}
+        error={error}
       />
     </>
   );

@@ -6,4 +6,6 @@ export interface InputProps extends React.HTMLProps<HTMLInputElement> {
   type?: string;
   onPressEnter?: () => void;
   onChange?: React.ChangeEventHandler<HTMLInputElement>;
+  name?: string;
+  error?: string;
 }
