@@ -5,6 +5,7 @@ import Input from '@components/atoms/Input';
 import Table from '@components/atoms/Table';
 import { HeaderSpace, InputWrapper, TableWrapper } from './FilterTable.style';
 import { FilterTableProps } from './FilterTable.type';
+import theme from '@styles/theme';
 
 const FilterTable: React.FC<FilterTableProps> = ({
   columns,
@@ -14,10 +15,11 @@ const FilterTable: React.FC<FilterTableProps> = ({
   placeholder,
   children,
 }) => {
+  const MAIN = theme.colors.main;
   const tableInstance = useRef<TableInstance>(null);
   return (
     <>
-      <Headerbar title={title} subText={subText}>
+      <Headerbar title={title} subText={subText} color={MAIN}>
         <InputWrapper>
           <Input
             onChange={(e) => {

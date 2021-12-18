@@ -7,7 +7,6 @@ import Table from '@components/atoms/Table';
 import Headerbar from '@components/organisms/Headerbar';
 import Modal from '@components/organisms/Modal';
 import {
-  HeaderSpace,
   IndicatorWrapper,
   TableWrapper,
   StyledLink,
@@ -62,7 +61,6 @@ const Exam: React.FC<RouteComponentProps<MatchParams>> = ({ match }) => {
           <Button secondary>시험 모니터링</Button>
         </StyledLink>
       </Headerbar>
-      <HeaderSpace />
       <IndicatorWrapper>
         <Indicator number={42} title="총 응시자 수" />
         <Indicator number={31} title="진행중인 응시자 수" />
