@@ -4,6 +4,8 @@ export const Wrapper = styled.div`
   height: 100%;
   width: 100%;
   display: flex;
+  align-items: center;
+  justify-content: space-between;
 `;
 
 export const SidebarSpace = styled.div`
@@ -21,7 +23,7 @@ export const Header = styled.div`
   display: block;
   flex: 1;
   text-align: center;
-  font-size: ${({ theme }) => theme.fontSizes.header1};
+  font-size: ${({theme}) => theme.fontSizes.header1};
   padding-top: 35px;
   width: 100%;
 `;
@@ -31,6 +33,10 @@ export const Body = styled.div`
 `;
 
 export const Title = styled.div`
-  font-size: ${({ theme }) => theme.fontSizes.header2};
+  font-size: ${({theme}) => theme.fontSizes.header2};
   font-weight: bold;
 `;
+
+export const Space = styled.div`
+    width: 1vw;
+       `;
