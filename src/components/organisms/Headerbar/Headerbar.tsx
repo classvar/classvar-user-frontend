@@ -12,6 +12,10 @@ const Headerbar: React.FC<HeaderbarProps> = ({
   subText,
   title,
   login,
+  bgColor,
+  height,
+  color,
+  titleSize,
 }) => {
   const [scrolled, setScrolled] = useState(false);
 
@@ -30,8 +34,13 @@ const Headerbar: React.FC<HeaderbarProps> = ({
   }, [scrolled]);
 
   return (
-    <StyledHeaderbar scrolled={scrolled} login={login}>
-      <StyledTitle>
+    <StyledHeaderbar
+      scrolled={scrolled}
+      login={login}
+      bgColor={bgColor}
+      height={height}
+    >
+      <StyledTitle color={color} titleSize={titleSize}>
         {title}
         <StyledSubText>{subText}</StyledSubText>
       </StyledTitle>

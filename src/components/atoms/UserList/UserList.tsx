@@ -10,6 +10,7 @@ import {
 import { StyledTable, Tr, Td } from './UserList.style';
 import { UserListProps } from './UserList.type';
 
+// eslint-disable-next-line react/display-name
 const UserList = React.forwardRef<TableInstance, UserListProps>(
   ({ columns, data }, ref) => {
     const instance = useTable(

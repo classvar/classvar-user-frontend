@@ -10,7 +10,6 @@ import { callLoginApi, callSignupApi } from '../../api/user.api';
 import {
   Aligner,
   LoginPage,
-  HeaderSpace,
   ModalBody,
   RightAlignedButton,
   ErrorMessage,
@@ -152,7 +151,6 @@ const Login: React.FC = () => {
       >
         <Button onClick={openLoginModal}>로그인</Button>
       </Headerbar>
-      <HeaderSpace />
       <LoginPage>
         ClassVAR에 오신것을 환영합니다
         <br />

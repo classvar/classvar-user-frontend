@@ -4,6 +4,8 @@ export const Wrapper = styled.div`
   height: 100%;
   width: 100%;
   display: flex;
+  align-items: center;
+  justify-content: space-between;
 `;
 
 export const SidebarSpace = styled.div`
@@ -34,3 +36,7 @@ export const Title = styled.div`
   font-size: ${({ theme }) => theme.fontSizes.header2};
   font-weight: bold;
 `;
+
+export const Space = styled.div`
+    width: 1vw;
+       `;

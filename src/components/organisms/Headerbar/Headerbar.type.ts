@@ -4,4 +4,8 @@ export interface HeaderbarProps {
   children: React.ReactNode;
   title: string;
   subText?: string;
+  bgColor?: string;
+  height?: string;
+  color?: string;
+  titleSize?: string;
 }

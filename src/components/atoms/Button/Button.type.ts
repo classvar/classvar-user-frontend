@@ -6,5 +6,6 @@ export interface ButtonProps extends React.HTMLProps<HTMLButtonElement> {
   danger?: boolean;
   rect?: boolean;
   secondary?: boolean;
+  gray?: boolean;
   onClick?: () => void;
 }
