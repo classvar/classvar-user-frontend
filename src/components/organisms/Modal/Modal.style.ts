@@ -67,6 +67,7 @@ export const StyledHeader = styled.div`
 
 export const StyledTitle = styled.div`
   flex: auto;
+  color: black;
 `;
 
 export const StyledComponents = styled.div`

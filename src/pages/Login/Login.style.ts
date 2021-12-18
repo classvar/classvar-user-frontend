@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import theme from '@styles/theme';
 
 export const LoginPage = styled.div`
   height: calc(100% - 100px);
@@ -27,4 +28,10 @@ export const RightAlignedButton = styled.div`
   &:hover {
     color: ${({ theme }) => theme.colors.main};
   }
+`;
+
+export const ErrorMessage = styled.div`
+  color: ${theme.colors.danger1};
+  font-size: 0.8rem;
+  padding: 0.5rem 0;
 `;

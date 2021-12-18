@@ -1,7 +1,8 @@
 import styled, { css } from 'styled-components';
 import { InputProps } from './Input.type';
+import theme from '@styles/theme';
 
-type StyledInputProps = Pick<InputProps, 'disabled'>;
+type StyledInputProps = Pick<InputProps, 'disabled' | 'error'>;
 
 export const StyledInput = styled.input<StyledInputProps>`
   box-sizing: border-box;
@@ -57,6 +58,21 @@ export const StyledInput = styled.input<StyledInputProps>`
       &:hover {
         border-color: ${({ theme }) => theme.colors.disabledborder};
         border-right-width: 1px !important;
+      }
+    `}
+  ${(props) =>
+    props.error &&
+    css`
+      border-color: ${theme.colors.danger1};
+      &:hover {
+        border-color: ${theme.colors.danger1};
+        border-right-width: 1px !important;
+      }
+      &:focus {
+        border-color: ${({ theme }) => theme.colors.danger1};
+        border-right-width: 1px !important;
+        outline: 0;
+        box-shadow: 0 0 0 2px rgba(255, 77, 79, 0.2);
       }
     `}
 `;
