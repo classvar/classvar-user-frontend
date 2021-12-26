@@ -1,6 +1,3 @@
-/* eslint-disable react/jsx-key */
-/* eslint-disable @typescript-eslint/no-explicit-any */
-/* eslint-disable react/display-name */
 import React, { useState, useRef } from 'react';
 import { TableInstance, CellProps } from 'react-table';
 import { ReactComponent as Note } from '@assets/note.svg';

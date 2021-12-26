@@ -1,7 +1,6 @@
 import React, { useEffect, forwardRef } from 'react';
 import { CheckboxProps } from './Checkbox.type';
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const useCombinedRefs = (...refs: any[]): React.MutableRefObject<any> => {
   const targetRef = React.useRef();
   React.useEffect(() => {

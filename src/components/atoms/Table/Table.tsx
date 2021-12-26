@@ -1,6 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-/* eslint-disable react/jsx-key */
-/* eslint-disable react/display-name */
 import React, { useImperativeHandle } from 'react';
 import {
   useTable,
