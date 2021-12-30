@@ -1,8 +1,13 @@
 import React, { useEffect, forwardRef } from 'react';
 import { CheckboxProps } from './Checkbox.type';
 
-const useCombinedRefs = (...refs: any[]): React.MutableRefObject<any> => {
-  const targetRef = React.useRef();
+const useCombinedRefs = (
+  ...refs: Array<
+    React.Ref<HTMLInputElement> | React.RefObject<HTMLInputElement>
+  >
+) => {
+  // React.Ref<HTMLInputElement> React.RefObject<HTMLInputElement>
+  const targetRef = React.useRef<HTMLInputElement>(null);
   React.useEffect(() => {
     refs.forEach((ref) => {
       if (!ref) return;
@@ -10,7 +15,8 @@ const useCombinedRefs = (...refs: any[]): React.MutableRefObject<any> => {
       if (typeof ref === 'function') {
         ref(targetRef.current);
       } else {
-        ref.current = targetRef.current;
+        // readonly인데 이게 동작할 수가 없는 코드인데?
+        // ref.current = targetRef.current;
       }
     });
   }, [refs]);
@@ -20,7 +26,7 @@ const useCombinedRefs = (...refs: any[]): React.MutableRefObject<any> => {
 
 const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
   ({ indeterminate, ...rest }, ref: React.Ref<HTMLInputElement>) => {
-    const defaultRef = React.useRef(null);
+    const defaultRef = React.useRef<HTMLInputElement>(null);
     const combinedRef = useCombinedRefs(ref, defaultRef);
 
     useEffect(() => {

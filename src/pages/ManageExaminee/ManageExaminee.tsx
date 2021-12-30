@@ -5,11 +5,12 @@ import Modal from '@components/organisms/Modal';
 import FilterTable from '@components/templates/FilterTable';
 import { StyledLink } from './ManageExaminee.style';
 import { data } from '../dummydata';
+import { TableColumnType } from '@components/atoms/Table/Table.type';
 
 const ManageExaminee: React.FC = () => {
   const [deleteModalOpen, setDeleteModalOpen] = useState(false);
   const [applyModalOpen, setApplyModalOpen] = useState(false);
-  const columns = React.useMemo(
+  const columns: TableColumnType[] = React.useMemo(
     () => [
       {
         Header: '이름',
@@ -33,6 +34,8 @@ const ManageExaminee: React.FC = () => {
 
   return (
     <>
+      {/* generic을 FilterTable을 정의하는데 써야 하지 않을까? */}
+      {/* FilterTable<D> 로 놓고  */}
       <FilterTable
         title="응시자 관리"
         subText="총 40명"

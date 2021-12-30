@@ -1,3 +1,4 @@
+import { ExamDataType } from '@pages/Exam/Exam.type';
 import React, { useImperativeHandle } from 'react';
 import {
   TableInstance,
@@ -9,7 +10,7 @@ import {
 import { StyledTable, Tr, Td } from './UserList.style';
 import { UserListProps } from './UserList.type';
 
-const UserList = React.forwardRef<TableInstance, UserListProps>(
+const UserList = React.forwardRef<TableInstance, UserListProps<ExamDataType>>(
   ({ columns, data }, ref) => {
     const instance = useTable(
       { columns, data, initialState: { hiddenColumns: ['status'] } },
@@ -44,12 +45,14 @@ const UserList = React.forwardRef<TableInstance, UserListProps>(
                       row.toggleRowSelected();
                     }
                   }}
+                  key={null}
                 >
                   {row.cells.map((cell) => {
                     return (
                       <Td
                         isBold={cell.column.id === 'name'}
                         {...cell.getCellProps()}
+                        key={null}
                       >
                         {cell.render('Cell')}
                       </Td>
@@ -64,5 +67,7 @@ const UserList = React.forwardRef<TableInstance, UserListProps>(
     );
   },
 );
+
+UserList.displayName = 'UserList';
 
 export default UserList;

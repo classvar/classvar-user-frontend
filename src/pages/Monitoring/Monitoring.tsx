@@ -8,7 +8,7 @@ import SidebarFrame from '@components/atoms/SidebarFrame';
 import UserList from '@components/atoms/UserList';
 import Headerbar from '@components/organisms/Headerbar';
 import Modal from '@components/organisms/Modal';
-import { data } from '@pages/Exam/dummydata';
+import { data } from '@pages/Exam/Exam.type';
 import {
   Wrapper,
   Header,
@@ -57,7 +57,11 @@ const Monitoring: React.FC = () => {
       {
         Header: '',
         accessor: 'button',
-        Cell: (props: React.PropsWithChildren<CellProps<any>>) => (
+        Cell: (
+          props: React.PropsWithChildren<
+            CellProps<Record<string, unknown>, unknown>
+          >,
+        ) => (
           <Icon>
             <Note
               width="20"
@@ -161,7 +165,7 @@ const Monitoring: React.FC = () => {
                 row.isSelected && (
                   <div>
                     {row.cells.map((cell) => {
-                      return <div>{cell.render('Cell')}</div>;
+                      return <div key={null}>{cell.render('Cell')}</div>;
                     })}
                   </div>
                 )
@@ -169,7 +173,7 @@ const Monitoring: React.FC = () => {
             })}
             {data.map((e) => {
               return (
-                <VideoArea>
+                <VideoArea key={null}>
                   <Video autoPlay muted playsInline></Video>
                   <Video autoPlay playsInline></Video>
                   {e.name}

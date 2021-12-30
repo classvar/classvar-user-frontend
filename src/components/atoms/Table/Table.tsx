@@ -5,14 +5,16 @@ import {
   useRowSelect,
   useGlobalFilter,
   TableInstance,
+  CellProps,
 } from 'react-table';
 import Checkbox from '@components/atoms/Checkbox';
-import { TableProps } from './Table.type';
+import { TableDataType, TableProps } from './Table.type';
 import { StyledTable, Tr, Th, Td } from './Table.style';
 
-const Table = React.forwardRef<TableInstance, TableProps>(
+const Table = React.forwardRef<TableInstance<TableDataType>, TableProps>(
   ({ columns, data, rowSelection }, ref) => {
     const instance = useTable(
+      // 지금은 이런 Type을 임의로 만들었는데, 실제로 무슨 데이터가 들어오는지는 모르겠음.
       {
         columns,
         data,
@@ -30,7 +32,7 @@ const Table = React.forwardRef<TableInstance, TableProps>(
                   <Checkbox name="b" {...getToggleAllRowsSelectedProps()} />
                 </>
               ) : null,
-            Cell: ({ row }) =>
+            Cell: ({ row }: CellProps<TableDataType>) =>
               rowSelection ? (
                 <>
                   <Checkbox name="a" {...row.getToggleRowSelectedProps()} />
@@ -41,15 +43,16 @@ const Table = React.forwardRef<TableInstance, TableProps>(
         ]);
       },
     );
+
     const {
       getTableProps,
       getTableBodyProps,
       headerGroups,
       rows,
       prepareRow,
-      state,
-      visibleColumns,
-      setGlobalFilter,
+      // state,
+      // visibleColumns,
+      // setGlobalFilter,
       state: { selectedRowIds },
     } = instance;
 
@@ -60,9 +63,12 @@ const Table = React.forwardRef<TableInstance, TableProps>(
         <StyledTable {...getTableProps()}>
           <thead>
             {headerGroups.map((headerGroup) => (
-              <Tr {...headerGroup.getHeaderGroupProps()}>
+              <Tr {...headerGroup.getHeaderGroupProps()} key={null}>
                 {headerGroup.headers.map((column) => (
-                  <Th {...column.getHeaderProps(column.getSortByToggleProps())}>
+                  <Th
+                    {...column.getHeaderProps(column.getSortByToggleProps())}
+                    key={null}
+                  >
                     {column.render('Header')}
                     <span>
                       {column.isSorted
@@ -80,10 +86,12 @@ const Table = React.forwardRef<TableInstance, TableProps>(
             {rows.map((row) => {
               prepareRow(row);
               return (
-                <Tr {...row.getRowProps()}>
+                <Tr {...row.getRowProps()} key={null}>
                   {row.cells.map((cell) => {
                     return (
-                      <Td {...cell.getCellProps()}>{cell.render('Cell')}</Td>
+                      <Td {...cell.getCellProps()} key={null}>
+                        {cell.render('Cell')}
+                      </Td>
                     );
                   })}
                 </Tr>
@@ -95,5 +103,7 @@ const Table = React.forwardRef<TableInstance, TableProps>(
     );
   },
 );
+
+Table.displayName = 'Table';
 
 export default Table;

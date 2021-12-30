@@ -12,7 +12,8 @@ import {
   StyledLink,
   ModalBody,
 } from './Exam.style';
-import { data } from './dummydata';
+import { data } from './Exam.type';
+import { TableColumnType } from '@components/atoms/Table/Table.type';
 
 const Exam: React.FC<RouteComponentProps<MatchParams>> = ({ match }) => {
   const [modalOpen, setModalOpen] = useState(false);
@@ -20,7 +21,8 @@ const Exam: React.FC<RouteComponentProps<MatchParams>> = ({ match }) => {
   const closeModal = () => {
     setModalOpen(false);
   };
-  const columns = useMemo(
+
+  const columns: TableColumnType[] = useMemo(
     () => [
       {
         Header: '이름',

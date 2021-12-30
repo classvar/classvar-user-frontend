@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import {
   CardWrapper,
   Title,
@@ -9,9 +9,10 @@ import { ReactComponent as PeopleNumber } from '@assets/peopleNumber.svg';
 import theme from '@styles/theme';
 import { useHistory } from 'react-router-dom';
 
-const Card: React.FC<CardProps> = ({ id, title, number }) => {
+const Card: FC<CardProps> = ({ id, title, number }) => {
   const history = useHistory();
   const SUB = theme.colors.sub;
+
   return (
     <CardWrapper onClick={() => history.push(`/course/${id}`)}>
       <Title>{title}</Title>

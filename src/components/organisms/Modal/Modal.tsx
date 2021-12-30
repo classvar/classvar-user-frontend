@@ -9,14 +9,14 @@ import {
   StyledBody,
 } from './Modal.style';
 
-const Modal: React.FC<ModalProps> = ({
+const Modal = ({
   title,
   width,
   open,
   headerComponent,
   closeModal,
   children,
-}) => {
+}: ModalProps) => {
   const stopEventProp = useCallback(
     (e: React.MouseEvent) => e.stopPropagation(),
     [],

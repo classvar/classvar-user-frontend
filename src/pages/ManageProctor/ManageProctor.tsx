@@ -5,12 +5,13 @@ import Modal from '@components/organisms/Modal';
 import FilterTable from '@components/templates/FilterTable';
 import { StyledLink } from './ManageProctor.style';
 import { data } from '../dummydata';
+import { TableColumnType } from '@components/atoms/Table/Table.type';
 
 const ManageProctor: React.FC = () => {
   const [deleteModalOpen, setDeleteModalOpen] = useState(false);
   const [applyModalOpen, setApplyModalOpen] = useState(false);
 
-  const columns = React.useMemo(
+  const columns: TableColumnType[] = React.useMemo(
     () => [
       {
         Header: '이름',
