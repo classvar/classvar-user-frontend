@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const instance = axios.create({
-  baseURL: 'http://api.classvar.com/api/',
+  baseURL: 'http://api.classvar.com/',
   withCredentials: false,
 });
 
