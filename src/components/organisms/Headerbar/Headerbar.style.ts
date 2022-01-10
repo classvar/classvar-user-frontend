@@ -7,7 +7,6 @@ type HeaderProps = Pick<
   'height' | 'login' | 'scrolled' | 'bgColor' | 'color' | 'titleSize'
 >;
 const MAIN = theme.colors.main;
-const WHITE = theme.colors.white;
 const HEADER1 = theme.fontSizes.header1;
 
 export const StyledHeaderbar = styled.div<HeaderProps>`

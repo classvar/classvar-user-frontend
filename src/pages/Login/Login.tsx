@@ -1,7 +1,6 @@
 import React from 'react';
 import Headerbar from '@components/organisms/Headerbar';
 import Button from '@components/atoms/Button';
-import { LoginPage } from './Login.style';
 import RegisterModal from './RegisterModal';
 import LoginModal from './LoginModal';
 import { useModal } from '../../hooks/useModal';
@@ -28,7 +27,6 @@ const Login: React.FC = () => {
       >
         <Button onClick={openLoginModal}>로그인</Button>
       </Headerbar>
-      {/*<LoginPage></LoginPage>*/}
       <LoginModal
         open={IsLoginModalOpen}
         onClose={closeLoginModal}
