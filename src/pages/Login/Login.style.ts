@@ -2,8 +2,8 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import theme from '@styles/theme';
 
+///  height: calc(100% - 100px);
 export const LoginPage = styled.div`
-  height: calc(100% - 100px);
   width: 100%;
   padding: 10px;
   background-color: ${({ theme }) => theme.colors.background};

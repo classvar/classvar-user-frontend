@@ -13,7 +13,9 @@ const HEADER1 = theme.fontSizes.header1;
 export const StyledHeaderbar = styled.div<HeaderProps>`
   height: ${(props) => props.height || '100px'};
   width: 100%;
-  background-color: ${(props) => props.bgColor || WHITE};
+  background-color: ${(props) => props.bgColor || 'rgba(255, 255, 255, 0.6)'};
+  backdrop-filter: blur(4px);
+
   color: ${({ theme }) => theme.colors.main};
 
   display: flex;

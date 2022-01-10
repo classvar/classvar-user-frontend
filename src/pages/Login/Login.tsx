@@ -12,7 +12,14 @@ const Login: React.FC = () => {
     useModal(false);
 
   return (
-    <>
+    <div
+      style={{
+        width: '100%',
+        height: '100%',
+        backgroundImage: 'url(/images/landing_bg.jpg',
+        backgroundSize: 'cover',
+      }}
+    >
       <Headerbar
         title="ClassVAR"
         subText="ClassVAR에 오신것을 환영합니다"
@@ -21,18 +28,14 @@ const Login: React.FC = () => {
       >
         <Button onClick={openLoginModal}>로그인</Button>
       </Headerbar>
-      <LoginPage>
-        ClassVAR에 오신것을 환영합니다
-        <br />
-        추후에 디자인 추가
-      </LoginPage>
+      {/*<LoginPage></LoginPage>*/}
       <LoginModal
         open={IsLoginModalOpen}
         onClose={closeLoginModal}
         openRegisterModal={openRegisterModal}
       />
       <RegisterModal open={IsRegisterModalOpen} onClose={closeRegisterModal} />
-    </>
+    </div>
   );
 };
 
