@@ -15,7 +15,7 @@ export async function callLoginApi(
 ): Promise<LoginApiReturnValues> {
   const { loginEmail, loginPassword } = props;
   try {
-    await api.post(`/login`, { loginEmail, loginPassword });
+    await api.post(`/login`, {email: loginEmail,password: loginPassword });
     return { success: true, error: undefined };
   } catch (error) {
     return { success: false, error };
